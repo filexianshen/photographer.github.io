@@ -42,33 +42,34 @@
       <p>这是我！ · 2025年</p>
     </div>
     
-    <!-- 视频示例 -->
-  <div class="video-container" style="position: relative; width: 100%; max-width: 800px;">
-  <!-- 封面图 -->
+  <!-- 视频示例 -->
+<div class="video-container" style="position: relative; width: 100%; max-width: 800px;">
+  <!-- 封面图（修正自闭合标签） -->
   <img 
-    src="photos/桌面运镜-封面版-封面.jpg"  <!-- 封面图路径 -->
+    src="photos/桌面运镜-封面版-封面.jpg" 
     class="video-cover" 
-    style="width: 100%; cursor: pointer;"
-    id="cover"
-  >
-  <!-- 视频（默认隐藏，点击封面后显示并播放） -->
+    style="width: 100%; cursor: pointer;" 
+    id="cover" 
+  />  <!-- 这里添加了 / 闭合 -->
+
+  <!-- 视频 -->
   <video 
     controls 
-    style="width: 100%; position: absolute; top: 0; left: 0; display: none;"
+    style="width: 100%; position: absolute; top: 0; left: 0; display: none;" 
     id="myVideo"
   >
-    <source src="videos/桌面运镜-封面版.mp4" type="video/mp4">
+    <source src="videos/桌面运镜-封面版.mp4" type="video/mp4" />  <!-- 同样建议自闭合 -->
   </video>
-</div>
+</div>  <!-- 确保容器标签闭合 -->
 
-<!-- 加入简单JS实现点击切换 -->
+<!-- JS 部分保持不变 -->
 <script>
   const cover = document.getElementById('cover');
   const video = document.getElementById('myVideo');
   cover.onclick = () => {
-    cover.style.display = 'none'; // 隐藏封面
-    video.style.display = 'block'; // 显示视频
-    video.play(); // 自动播放
+    cover.style.display = 'none';
+    video.style.display = 'block';
+    video.play();
   };
 </script>
     
