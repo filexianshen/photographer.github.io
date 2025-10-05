@@ -43,12 +43,34 @@
     </div>
     
     <!-- 视频示例 -->
-    <div class="item">
-      <video controls>
-        <source src="videos/桌面运镜-封面版.mp4" type="video/mp4">
-      </video>
-      <p>桌面运镜 · 2025年</p>
-    </div>
+  <div class="video-container" style="position: relative; width: 100%; max-width: 800px;">
+  <!-- 封面图 -->
+  <img 
+    src="photos/桌面运镜-封面版-封面.jpg"  <!-- 封面图路径 -->
+    class="video-cover" 
+    style="width: 100%; cursor: pointer;"
+    id="cover"
+  >
+  <!-- 视频（默认隐藏，点击封面后显示并播放） -->
+  <video 
+    controls 
+    style="width: 100%; position: absolute; top: 0; left: 0; display: none;"
+    id="myVideo"
+  >
+    <source src="videos/桌面运镜-封面版.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- 加入简单JS实现点击切换 -->
+<script>
+  const cover = document.getElementById('cover');
+  const video = document.getElementById('myVideo');
+  cover.onclick = () => {
+    cover.style.display = 'none'; // 隐藏封面
+    video.style.display = 'block'; // 显示视频
+    video.play(); // 自动播放
+  };
+</script>
     
      <div class="item">
       <video controls>
